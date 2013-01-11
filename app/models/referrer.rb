@@ -4,11 +4,11 @@ class Referrer
 
   field :token
   field :url
-  field :hits,            type: Integer, defautl: 0
-  field :badge_hits,      type: Integer, defautl: 0
-  field :contextual_hits, type: Integer, defautl: 0
+  field :hits,            type: Integer, default: 0
+  field :badge_hits,      type: Integer, default: 0
+  field :contextual_hits, type: Integer, default: 0
 
-  index [[:token, Mongo::ASCENDING], [:url, Mongo::ASCENDING]]
+  index token: 1, url: 1
 
   attr_accessible :token, :url, :hits, :contextual_hits, :badge_hits
 

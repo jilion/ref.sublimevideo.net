@@ -1,15 +1,12 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.3'
+gem 'rails', '3.2.11'
 
 # Internals
-gem 'airbrake', '~> 3.0.5'
+gem 'airbrake'
 
 # Databases
-gem 'bson_ext', '~> 1.6.0'
-gem 'bson',     '~> 1.6.0'
-gem 'mongo',    '~> 1.6.0'
-gem 'mongoid',  '~> 2.4.7'
+gem 'mongoid'
 
 group :production do
   gem 'thin'
