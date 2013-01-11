@@ -16,7 +16,7 @@ end
 
 group :staging, :production do
   gem 'newrelic_rpm'
-  gem 'rpm_contrib'
+  gem 'newrelic_moped'
 end
 
 group :development, :test do
