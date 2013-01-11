@@ -93,6 +93,9 @@ GEM
     moped (1.3.2)
     multi_json (1.5.0)
     netrc (0.7.7)
+    newrelic_moped (0.0.4.1)
+      moped
+      newrelic_rpm (~> 3.5.1)
     newrelic_rpm (3.5.5.38)
     origin (1.0.11)
     polyglot (0.3.3)
@@ -130,9 +133,6 @@ GEM
       json (~> 1.4)
     rest-client (1.6.7)
       mime-types (>= 1.16)
-    rpm_contrib (2.1.11)
-      newrelic_rpm (>= 3.1.1)
-      newrelic_rpm (>= 3.1.1)
     rspec (2.12.0)
       rspec-core (~> 2.12.0)
       rspec-expectations (~> 2.12.0)
@@ -184,12 +184,12 @@ DEPENDENCIES
   guard-rspec
   heroku
   mongoid
+  newrelic_moped
   newrelic_rpm
   powder
   pry
   rails (= 3.2.11)
   rb-readline
-  rpm_contrib
   rspec-rails
   shoulda-matchers
   thin
