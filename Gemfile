@@ -4,20 +4,26 @@ ruby '1.9.3'
 
 gem 'rails', '3.2.13'
 
-# Internals
-gem 'json'
+gem 'rack-status'
+
 gem 'airbrake'
 
 # Databases
 gem 'mongoid'
 
-group :production do
+group :staging, :production do
   gem 'thin'
+  gem 'lograge'
+  gem 'newrelic_rpm'
 end
 
-group :staging, :production do
-  gem 'newrelic_rpm'
-  gem 'newrelic_moped'
+group :development do
+  # Guard
+  gem 'ruby_gntp'
+  gem 'rb-fsevent'
+
+  gem 'guard-pow'
+  gem 'guard-rspec'
 end
 
 group :development, :test do
@@ -27,20 +33,4 @@ end
 group :test do
   gem 'database_cleaner'
   gem 'shoulda-matchers'
-end
-
-group :tools do
-  gem 'heroku'
-  gem 'foreman'
-  gem 'powder'
-  gem 'pry'
-
-  # Guard
-  gem 'growl'
-  platforms :ruby do
-    gem 'rb-readline'
-  end
-
-  gem 'guard-pow'
-  gem 'guard-rspec'
 end
