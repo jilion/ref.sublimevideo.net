@@ -11,6 +11,8 @@ class ReferrersController < ActionController::Metal
   ensure
     redirect_to 'http://sublimevideo.net'
   end
+  include ::NewRelic::Agent::Instrumentation::ControllerInstrumentation
+  add_transaction_tracer :show
 
 private
 
