@@ -7,6 +7,7 @@ gem 'rails', '3.2.13'
 gem 'rack-status'
 
 gem 'airbrake'
+gem 'newrelic_rpm'
 
 # Databases
 gem 'mongoid'
@@ -14,7 +15,6 @@ gem 'mongoid'
 group :staging, :production do
   gem 'unicorn'
   gem 'lograge'
-  gem 'newrelic_rpm'
 end
 
 group :development do
