@@ -10,15 +10,6 @@ development:
       # of host:port pairs. (required)
       hosts:
         - localhost:27017
-      options:
-        # Change whether the session persists in safe mode by default.
-        # (default: false)
-        # safe: false
-
-        # Change the default consistency model to :eventual or :strong.
-        # :eventual will send reads to secondaries, :strong sends everything
-        # to master. (default: :eventual)
-        consistency: :strong
   # Configure Mongoid specific options. (optional)
   options:
     # Configuration for whether or not to allow access to fields that do
@@ -51,7 +42,6 @@ development:
 
     # Skip the database version check, used when connecting to a db without
     # admin access. (default: false)
-    # skip_version_check: false
 
     # User Active Support's time zone in conversions. (default: true)
     # use_activesupport_time_zone: true
@@ -64,8 +54,6 @@ test:
       database: sublimevideo_test
       hosts:
         - localhost:27017
-      options:
-        consistency: :strong
   options:
     preload_models: true
     use_utc: true
@@ -77,11 +65,6 @@ staging:
       password: <%= ENV['MONGOHQ_PASSWORD'] %>
       hosts:
         - alex.mongohq.com:10016
-      options:
-        consistency: :strong
-        op_timeout: 30
-        connect_timeout: 30
-        pool_size: 10
   options:
     preload_models: true
     use_utc: true
@@ -102,11 +85,6 @@ production:
       password: <%= ENV['MONGOHQ_PASSWORD'] %>
       hosts:
         - sublimevideo.member0.mongolayer.com:27017
-      options:
-        consistency: :strong
-        op_timeout: 30
-        connect_timeout: 30
-        pool_size: 10
   options:
     preload_models: true
     use_utc: true
