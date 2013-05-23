@@ -3,7 +3,9 @@ class Hit < ActiveRecord::Base
 
   def self.increment(attributes)
     hit = where(site_token: attributes['site_token']).first_or_create
-    hit.increment!(_counter_from_type(attributes['type']))
+    counter_attribute = _counter_from_type(attributes['type'])
+    hit.increment!(counter_attribute)
+    Librato.increment 'ref.hits', source: counter_attribute
   end
 
   private

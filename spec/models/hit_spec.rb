@@ -14,6 +14,11 @@ describe Hit do
         expect { Hit.increment(attributes) }.to change(Hit, :count).by(1)
         Hit.last.contextual.should eq 1
       end
+
+      it "increments Librato" do
+        Librato.should_receive(:increment).with('ref.hits', source: :contextual)
+        Hit.increment(attributes)
+      end
     end
 
     context "hit exists" do
@@ -22,6 +27,11 @@ describe Hit do
       it "creates hit and increments type" do
         expect { Hit.increment(attributes) }.to change(Hit, :count).by(0)
         Hit.last.contextual.should eq 2
+      end
+
+      it "increments Librato" do
+        Librato.should_receive(:increment).with('ref.hits', source: :contextual)
+        Hit.increment(attributes)
       end
     end
   end
