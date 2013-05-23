@@ -1,5 +1,4 @@
 RefSublimeVideo::Application.routes.draw do
-  match '/' => redirect('http://sublimevideo.net')
-
-  get '/:type/:token' => 'referrers#show', type: /b|c/, token: /[a-z0-9]{8}/
+  get '/' => redirect('http://sublimevideo.net')
+  get '/:type/:site_token' => 'referrers#show', type: /b|c/, site_token: /[a-z0-9]{8}/
 end

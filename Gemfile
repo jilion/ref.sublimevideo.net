@@ -2,35 +2,38 @@ source 'https://rubygems.org'
 
 ruby '2.0.0'
 
-gem 'rails', '3.2.13'
+gem 'rails', '4.0.0.rc1'
 
-gem 'rack-status'
+gem 'pg'
+gem 'oj'
 
-gem 'airbrake'
+gem 'honeybadger'
 gem 'newrelic_rpm'
+gem 'rack-status'
+gem 'librato-rails', github: 'librato/librato-rails', branch: 'feature/rack_first'
 
-# Databases
-gem 'mongoid'
+gem 'mongoid', github: 'mongoid/mongoid' # temp
 
-group :staging, :production do
+group :production do
   gem 'unicorn'
   gem 'lograge'
 end
 
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'dotenv-rails'
+end
+
 group :development do
+  gem 'annotate'
+
   # Guard
   gem 'ruby_gntp'
-  gem 'rb-fsevent'
-
   gem 'guard-pow'
   gem 'guard-rspec'
 end
 
-group :development, :test do
-  gem 'rspec-rails'
-end
-
 group :test do
-  gem 'database_cleaner'
+  gem 'rspec'
   gem 'shoulda-matchers'
 end
