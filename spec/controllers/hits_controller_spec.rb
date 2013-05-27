@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe ReferrersController do
+describe HitsController do
 
   describe "GET redirect" do
     before { Hit.stub(:increment) }

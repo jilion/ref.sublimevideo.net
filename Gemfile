@@ -12,8 +12,6 @@ gem 'newrelic_rpm'
 gem 'rack-status'
 gem 'librato-rails', github: 'librato/librato-rails', branch: 'feature/rack_first'
 
-gem 'mongoid', github: 'mongoid/mongoid' # temp
-
 group :production do
   gem 'unicorn'
   gem 'lograge'

@@ -10,8 +10,6 @@ require 'dotenv-rails' unless Rails.env.production?
 require 'librato-rails'
 require 'newrelic_rpm'
 
-require 'mongoid' # temp
-
 module RefSublimeVideo
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.

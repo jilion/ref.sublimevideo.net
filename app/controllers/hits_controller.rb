@@ -1,4 +1,4 @@
-class ReferrersController < ActionController::Metal
+class HitsController < ActionController::Metal
   include ActionController::Helpers
   include ActionController::Cookies
   include ActionController::Redirecting
