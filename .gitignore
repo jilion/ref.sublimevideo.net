@@ -21,4 +21,4 @@ vendor/bundler
 !.bundle
 !.bundle/*
 !public/assets/*.gz
-.env
+!.env
