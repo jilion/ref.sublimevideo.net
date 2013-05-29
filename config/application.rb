@@ -6,7 +6,7 @@ require "action_controller/railtie"
 
 Bundler.setup(:default, Rails.env)
 
-require 'dotenv-rails' unless Rails.env.production?
+require 'dotenv-rails' if Rails.env.in?(%w[test development])
 require 'librato-rails'
 require 'newrelic_rpm'
 
