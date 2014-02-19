@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.0.0'
 
-gem 'rails', '~> 4.0.2'
+gem 'rails', '~> 4.0.3'
 
 gem 'pg'
 gem 'oj'
@@ -10,7 +10,7 @@ gem 'oj'
 gem 'honeybadger'
 gem 'newrelic_rpm'
 gem 'rack-status'
-gem 'librato-rails', github: 'librato/librato-rails', branch: 'feature/rack_first'
+gem 'librato-rails'
 
 group :production do
   gem 'unicorn'

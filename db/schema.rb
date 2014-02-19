@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20130522142706) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "hits", force: true do |t|
     t.string   "site_token"
     t.integer  "badge",      default: 0
